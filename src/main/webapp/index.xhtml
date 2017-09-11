@@ -9,32 +9,32 @@
 <ui:composition template="layout.xhtml">
 
     <ui:define name="content">
-        <h:form id="bookForm" prependId="false">
-            <p:fieldset legend="Create a New Book">
+        <h:form id="employeeForm" prependId="false">
+            <p:fieldset legend="Create a New Employee">
                 <h:panelGrid columns="2" border="0" layout="grid" style="margin: 20px;">
                     <p:outputLabel value="Title : "/>
-                    <p:inputText id="title" value="#{book.title}" size=""/>
+                    <p:inputText id="title" value="#{employee.title}" size=""/>
                     <p:outputLabel value="Price : "/>
-                    <p:inputText id="price" value="#{book.price}"/>
+                    <p:inputText id="price" value="#{employee.price}"/>
                     <p:outputLabel value="Description : "/>
-                    <p:inputTextarea id="description" value="#{book.description}" cols="16" rows="3"/>
+                    <p:inputTextarea id="description" value="#{employee.description}" cols="16" rows="3"/>
                     <p:outputLabel value="Number of pages : "/>
-                    <p:inputText id="nbop" value="#{book.nbofpage}"/>
+                    <p:inputText id="nbop" value="#{employee.nbofpage}"/>
                     <p:outputLabel value="Illustrations : "/>
-                    <p:selectBooleanCheckbox id="ill" value="#{book.illustrations}"/>
+                    <p:selectBooleanCheckbox id="ill" value="#{employee.illustrations}"/>
                 </h:panelGrid>
-                <p:commandButton value="Create a book" update="booklist,title,price,description,nbop,ill"
-                                 actionListener="#{model.doCreateBook()}"/>
+                <p:commandButton value="Create a employee" update="employeelist,title,price,description,nbop,ill"
+                                 actionListener="#{model.doCreateEmployee()}"/>
             </p:fieldset>
             <br/>
             <h3 class="title ui-widget-header ui-corner-all"
-                style="font-family: Arial, sans-serif; padding: 5px">List of books</h3>
-            <p:dataTable id="booklist" value="#{model.findAllBooks()}" var="bk" border="1">
+                style="font-family: Arial, sans-serif; padding: 5px">List of employees</h3>
+            <p:dataTable id="employeelist" value="#{model.findAllEmployees()}" var="bk" border="1">
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Title"/>
                     </f:facet>
-                    <p:link outcome="viewBook.xhtml?id=#{bk.id}" value="#{bk.title}"/>
+                    <p:link outcome="viewEmployee.xhtml?id=#{bk.id}" value="#{bk.title}"/>
                 </p:column>
                 <p:column>
                     <f:facet name="header">

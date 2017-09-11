@@ -10,11 +10,11 @@ import javax.validation.constraints.NotNull;
 import static javax.persistence.GenerationType.AUTO;
 
 @Data
-@ManagedBean(name = "book", eager = true)
+@ManagedBean(name = "employee", eager = true)
 @RequestScoped
 @Entity
-@Table(schema = "books.public", name = "Book")
-public class Book {
+@Table(schema = "employees.public", name = "Employee")
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = AUTO)

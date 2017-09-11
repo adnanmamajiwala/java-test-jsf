@@ -20,7 +20,7 @@ public class FacesRewriteConfigurationProvider extends HttpConfigurationProvider
     public Configuration getConfiguration(final ServletContext context) {
         return ConfigurationBuilder.begin()
                 .addRule(Join.path("/").to("/index.jsf"))
-                .addRule(Join.path("/book/{id}/").to("/viewBook.jsf"));
+                .addRule(Join.path("/employee/{id}/").to("/viewEmployee.jsf"));
     }
 
 }
