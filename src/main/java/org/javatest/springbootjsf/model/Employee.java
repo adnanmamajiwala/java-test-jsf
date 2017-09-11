@@ -13,7 +13,7 @@ import static javax.persistence.GenerationType.AUTO;
 @ManagedBean(name = "employee", eager = true)
 @RequestScoped
 @Entity
-@Table(schema = "employees.public", name = "Employee")
+@Table(name = "Employee")
 public class Employee {
 
     @Id

@@ -1,6 +1,6 @@
 package org.javatest.springbootjsf;
 
-import org.springframework.boot.context.embedded.ServletContextInitializer;
+import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.ServletContext;
