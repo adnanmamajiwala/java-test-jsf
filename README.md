@@ -1,6 +1,11 @@
 # java-test-jsf
 
-Check out the project and run
-`mvn spring-boot:run`
+Clone the project and run below command
 
-Goto the browser and hit http://localhost:8080/
+    `mvn spring-boot:run`
+
+Goto the browser and hit the url  http://localhost:8080/
+
+**Credentials**
+Username : admin
+Password : admin
