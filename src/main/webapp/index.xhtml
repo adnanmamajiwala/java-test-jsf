@@ -8,6 +8,7 @@
       xmlns:p="http://primefaces.org/ui">
 <ui:composition template="layout.xhtml">
 
+
     <ui:define name="content">
         <h:form id="employeeForm" prependId="false">
             <p:fieldset >
@@ -16,14 +17,20 @@
                     <p:inputText id="name" value="#{employee.name}" size=""/>
                     <p:outputLabel value="Address : "/>
                     <p:inputTextarea id="address" value="#{employee.address}" cols="16" rows="3"/>
+
+                    <p:outputLabel for="department" value="Department : " />
+                    <p:selectOneMenu id="department"  style="width:150px">
+                        <f:selectItem itemLabel="Select City" itemValue="" noSelectionOption="true" />
+                        <!--<f:selectItems value="#{empModel.departmentsMap}" />-->
+                    </p:selectOneMenu>
                 </h:panelGrid>
                 <p:commandButton value="Add" update="employeelist,name,address"
-                                 actionListener="#{model.saveEmployee()}"/>
+                                 actionListener="#{empModel.saveEmployee()}"/>
             </p:fieldset>
             <br/>
             <h3 class="title ui-widget-header ui-corner-all"
                 style="font-family: Arial, sans-serif; padding: 5px">List of employees</h3>
-            <p:dataTable id="employeelist" value="#{model.findAllEmployees()}" var="emp" border="1">
+            <p:dataTable id="employeelist" value="#{empModel.findAllEmployees()}" var="emp" border="1">
                 <p:column>
                     <f:facet name="header">
                         <h:outputText value="Name"/>

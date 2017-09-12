@@ -9,8 +9,8 @@
 <f:view>
     <ui:composition template="layout.xhtml">
         <f:metadata>
-            <f:viewParam name="id" value="#{model.employee.id}"/>
-            <f:viewAction action="#{model.doFindEmployeeById()}"/>
+            <f:viewParam name="id" value="#{empModel.employee.id}"/>
+            <f:viewAction action="#{empModel.doFindEmployeeById()}"/>
         </f:metadata>
         <ui:define name="title">View a employee</ui:define>
         <ui:define name="content">
@@ -23,11 +23,11 @@
                     <p:inputTextarea id="address" value="#{employee.address}" cols="16" rows="3"/>
                 </h:panelGrid>
                 <p:commandButton value="Update" update="name,address"
-                                 actionListener="#{model.saveEmployee()}"
+                                 actionListener="#{empModel.saveEmployee()}"
                                  action="index?faces-redirect=true}"/>
 
                 <p:commandButton value="Delete" update="name,address"
-                                 actionListener="#{model.deleteEmployee()}"
+                                 actionListener="#{empModel.deleteEmployee()}"
                                  action="index?faces-redirect=true}"/>
             </h:form>
         </ui:define>

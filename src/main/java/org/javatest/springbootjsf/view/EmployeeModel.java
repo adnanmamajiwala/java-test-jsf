@@ -13,7 +13,7 @@ import java.util.List;
 import static javax.faces.application.FacesMessage.SEVERITY_INFO;
 import static javax.faces.context.FacesContext.getCurrentInstance;
 
-@ManagedBean(name = "model", eager = true)
+@ManagedBean(name = "empModel", eager = true)
 @RequestScoped
 @Data
 public class EmployeeModel {
@@ -23,6 +23,7 @@ public class EmployeeModel {
 
     @ManagedProperty(value = "#{employee}")
     private Employee employee;
+
 
     public String saveEmployee() {
         employeeRepository.save(employee);
