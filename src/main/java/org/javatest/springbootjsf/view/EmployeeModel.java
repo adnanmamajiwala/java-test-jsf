@@ -24,19 +24,28 @@ public class EmployeeModel {
     @ManagedProperty(value = "#{employee}")
     private Employee employee;
 
-    public String doCreateEmployee() {
+    public String saveEmployee() {
         employeeRepository.save(employee);
 
         getCurrentInstance().addMessage("errors",
                 new FacesMessage(SEVERITY_INFO, "Employee created",
                         "The employee " + employee.getName() + " has been created with id=" + employee.getId()));
 
+        return resetEmployee();
+    }
+
+    private String resetEmployee() {
         employee.setId(null);
         employee.setName("");
         employee.setAddress("");
-        employee.setDepartmentId(3L);
+        employee.setDepartmentId(null);
 
         return "index.xhtml";
+    }
+
+    public String deleteEmployee() {
+        employeeRepository.delete(employee.getId());
+        return resetEmployee();
     }
 
     public void doFindEmployeeById() {

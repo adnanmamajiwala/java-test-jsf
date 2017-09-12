@@ -18,7 +18,7 @@
                     <p:inputTextarea id="address" value="#{employee.address}" cols="16" rows="3"/>
                 </h:panelGrid>
                 <p:commandButton value="Add" update="employeelist,name,address"
-                                 actionListener="#{model.doCreateEmployee()}"/>
+                                 actionListener="#{model.saveEmployee()}"/>
             </p:fieldset>
             <br/>
             <h3 class="title ui-widget-header ui-corner-all"
