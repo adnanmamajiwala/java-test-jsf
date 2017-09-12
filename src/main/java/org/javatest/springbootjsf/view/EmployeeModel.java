@@ -29,13 +29,12 @@ public class EmployeeModel {
 
         getCurrentInstance().addMessage("errors",
                 new FacesMessage(SEVERITY_INFO, "Employee created",
-                        "The employee " + employee.getTitle() + " has been created with id=" + employee.getId()));
+                        "The employee " + employee.getName() + " has been created with id=" + employee.getId()));
 
-        employee.setTitle("");
-        employee.setPrice(null);
-        employee.setDescription("");
-        employee.setIllustrations(false);
-        employee.setNbofpage(null);
+        employee.setId(null);
+        employee.setName("");
+        employee.setAddress("");
+        employee.setDepartmentId(3L);
 
         return "index.xhtml";
     }
@@ -44,10 +43,8 @@ public class EmployeeModel {
         Employee found = employeeRepository.findOne(this.employee.getId());
 
         employee.setId(found.getId());
-        employee.setTitle(found.getTitle());
-        employee.setPrice(found.getPrice());
-        employee.setNbofpage(found.getNbofpage());
-        employee.setDescription(found.getDescription());
+        employee.setName(found.getName());
+        employee.setAddress(found.getAddress());
     }
 
     public List<Employee> findAllEmployees() {

@@ -10,37 +10,25 @@
 
     <ui:define name="content">
         <h:form id="employeeForm" prependId="false">
-            <p:fieldset legend="Create a New Employee">
+            <p:fieldset >
                 <h:panelGrid columns="2" border="0" layout="grid" style="margin: 20px;">
-                    <p:outputLabel value="Title : "/>
-                    <p:inputText id="title" value="#{employee.title}" size=""/>
-                    <p:outputLabel value="Price : "/>
-                    <p:inputText id="price" value="#{employee.price}"/>
-                    <p:outputLabel value="Description : "/>
-                    <p:inputTextarea id="description" value="#{employee.description}" cols="16" rows="3"/>
-                    <p:outputLabel value="Number of pages : "/>
-                    <p:inputText id="nbop" value="#{employee.nbofpage}"/>
-                    <p:outputLabel value="Illustrations : "/>
-                    <p:selectBooleanCheckbox id="ill" value="#{employee.illustrations}"/>
+                    <p:outputLabel value="Name : "/>
+                    <p:inputText id="name" value="#{employee.name}" size=""/>
+                    <p:outputLabel value="Address : "/>
+                    <p:inputTextarea id="address" value="#{employee.address}" cols="16" rows="3"/>
                 </h:panelGrid>
-                <p:commandButton value="Create a employee" update="employeelist,title,price,description,nbop,ill"
+                <p:commandButton value="Add" update="employeelist,name,address"
                                  actionListener="#{model.doCreateEmployee()}"/>
             </p:fieldset>
             <br/>
             <h3 class="title ui-widget-header ui-corner-all"
                 style="font-family: Arial, sans-serif; padding: 5px">List of employees</h3>
-            <p:dataTable id="employeelist" value="#{model.findAllEmployees()}" var="bk" border="1">
+            <p:dataTable id="employeelist" value="#{model.findAllEmployees()}" var="emp" border="1">
                 <p:column>
                     <f:facet name="header">
-                        <h:outputText value="Title"/>
+                        <h:outputText value="Name"/>
                     </f:facet>
-                    <p:link outcome="viewEmployee.xhtml?id=#{bk.id}" value="#{bk.title}"/>
-                </p:column>
-                <p:column>
-                    <f:facet name="header">
-                        <h:outputText value="Price"/>
-                    </f:facet>
-                    <h:outputText value="#{bk.price}"/>
+                    <p:link outcome="viewEmployee.xhtml?id=#{emp.id}" value="#{emp.name}"/>
                 </p:column>
             </p:dataTable>
         </h:form>

@@ -1,11 +1,7 @@
-INSERT INTO Employee (id, title, price, description, nbofpage, illustrations) VALUES
-  (0, 'Functional Programming in Scala', 49.99,
-   'Functional Programming in Scala is a serious tutorial for programmers looking to learn FP and apply it to the everyday business of coding.',
-   301, FALSE);
+INSERT INTO Employee (id, name, address, department_id) VALUES
+  (1, 'Brad Pitt', '123 Hollywood st, Los Angeles, CA 52123', 3);
 
-INSERT INTO Employee (id, title, price, description, nbofpage, illustrations) VALUES
-  (1, 'Big Data Analytics Beyond Hadoop: Real-Time Applications with Storm, Spark, and More Hadoop Alternatives', 55.99,
-   'Master alternative Big Data technologies that can do what Hadoop can''t: real-time analytics and iterative machine learning',
-   240, TRUE);
+INSERT INTO Employee (id, name, address, department_id) VALUES
+  (2, 'Barack Obama', '1 White house st, washington, VA, 32100', 1);
 
 
